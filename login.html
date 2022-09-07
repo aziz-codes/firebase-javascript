@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootrstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- <script src='https://cdn.firebase.com/js/client/9.9.4/firebase.js'></script> -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+   
+    <title>User Auth</title>
+</head>
+
+<body>
+
+    <div class="container text-center my-auto">
+
+
+        <div class="login-container">
+            <div class="auth-header">
+                <img src="./assets/images/icon.png" height="80" width="80" class="ml-3" />
+                <h4 class="">Arbaab</h4>
+            </div>
+            
+                <div class="form-inputs">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Email" class="form-control" id="login-email"/>
+                </div>
+                <div class="form-inputs">
+                    <label for="email">Password</label>
+                    <input type="password" placeholder="Password" class="form-control" id="login-password"/>
+                </div>
+                <button class="btn btn-primary mt-4 btn-login" id="btn-login">Login</button>
+            
+
+            <br>
+            <a href="register.html" class="nav-item mt-4 pb-3">Create new account</a>
+
+            <!-- <a href="#" class="nav-item mt-3">forget password?</a> -->
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!--Js Files-->
+
+    <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-auth-compat.js"></script>
+  <script>
+   const firebaseApp = firebase.initializeApp({
+    apiKey: "AIzaSyCH23lNAv0OAdVzw0w3B7n4dJopOrr-Sr4",
+    authDomain: "arbaab-5a181.firebaseapp.com",
+    databaseURL: "https://arbaab-5a181-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "arbaab-5a181",
+    storageBucket: "arbaab-5a181.appspot.com",
+    messagingSenderId: "864315381508",
+    appId: "1:864315381508:web:3653b2a9c2457e06cb6251",
+    measurementId: "G-6HWMK1W65E"
+    });
+   const db = firebaseApp.firestore();
+   const auth = firebaseApp.auth();
+</script>
+   
+    <!-- <script src="./assets/js/jquery.js"></script> -->
+    <script src="./assets/js/bootstrap.min.js"></script>
+
+    
+   <!-- <script src="./assets/js/firebase.js"></script> -->
+
+    <script src="./assets/js/app.js"></script>
+    <script>
+       
+       $(document).ready(function(){
+        // console.log('document is readyh')
+        document.querySelector('#btn-login').addEventListener('click',()=>{
+            const email = document.querySelector('#login-email').value;
+            const password = document.querySelector('#login-password').value;
+             
+            auth.signInWithEmailAndPassword(email,password)
+            .then((res)=>{
+               getUserData(res.user.udi);
+            })
+            .catch((err)=>{
+                console.log(err.message);
+            })
+           
+        })
+       })
+    
+
+       function getUserData(id){
+        firebase.database().ref('users/' + uid).once("value", snap => {
+        console.log(snap.val())
+    })
+       }
+
+
+  </script>
+</body>
+
+</html>

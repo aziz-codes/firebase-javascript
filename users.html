@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/bootrstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="sidebar" id="sidebar" data-visible="false" style="overflow-y: auto;">
+            <div class="sidebar-header">
+                <img src="./assets/images/icon.png" class="logo"/>
+                <h4>Arbaab</h4>
+            </div>
+            <div class="menus mt-4">
+                <ul class="navbar-nav" id="main-navigation" style="list-style-type:none;">
+                    <li class="nav-item lists">
+                        <a href="index.html" class="nav-link ">Dashboard</a>
+                    </li>
+                    <li class="nav-item lists">
+                        <a href="#" class="nav-link active">Users</a>
+                       
+                    </li>
+                  
+                    <li class="nav-item lists">
+                        <a href="categories.html" class="nav-link">Catgegories</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="second-row" id="main-content">
+            <div class="second-row-header">
+                <div class="frist-col">
+                    <button id="menu-icon" class=" p-2 pt-0 m-0" aria-controls="main-navigation" aria-expanded="false">
+                        ☰
+                    </button>
+                    <h4 class="text-muted">Users</h4>
+                </div>
+                <!-- <button class="logout-icon">«</button> -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 logout-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" 
+                  id="btn-logout"/>
+                </svg>
+            </div>
+            <hr>
+            
+          
+            <div class="table-wrapper">
+                <div class="stripped">
+                    <h4 class="d-flex">All Users</h4>
+                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">Add New User</button>
+                </div>
+                <hr>
+                <input type="text" placeholder="Search" class="form-control p-2 mb-2 ml-1" style="max-width:250px"/>
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+
+
+                    <tbody>
+                      <tr>
+                        <td>Muh</td>
+                        <td>b,.momar@gmail.com</td>
+                        <td>051891278</td>
+                        
+                       
+                        <td><button class="btn btn-primary btn-sm">Edit</button>
+                        <button class="btn btn-danger btn-sm">Delete</button></td>
+                      </tr>
+                     
+                      
+                      
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+<!-- Modal Code Goes Here -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Add New User</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+        </div>
+        <div class="modal-body">
+            <div class="form">
+                <div class="form-group mx-auto my-auto">
+                    <input type="text" class="form-control" placeholder="Name" />
+                    <input type="text" class="form-control" placeholder="Email" />
+                    <input type="text" class="form-control" placeholder="Mobile" />
+                 
+                    <input type="password" class="form-control" placeholder="Create Password" />
+                   
+              
+                    <button class="btn btn-primary mt-2 btn-lg btn-submit">Save</button>            
+                  </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  
+
+
+
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+</body>
+</html>

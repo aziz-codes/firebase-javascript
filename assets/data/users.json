@@ -1,0 +1,23 @@
+[
+    {
+      "id": "1",
+      "name": "Aziz",
+      "email": "azizcodes@gmail.com",
+      "designation": "Web Developer",
+      "profile": ""
+    },
+    {
+      "id": "2",
+      "name": "Anas",
+      "email": "anas@gmail.com",
+      "designation": "Python Developer",
+      "profile": "images/"
+    },
+    {
+      "id": "3",
+      "name": "Asad",
+      "email": "asad@gmail.com",
+      "designation": "Android Developer",
+      "profile": ""
+    }
+  ]
